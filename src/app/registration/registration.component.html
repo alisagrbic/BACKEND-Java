@@ -1,0 +1,12 @@
+<form class="form-registration" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value, registerForm)">
+  <div *ngFor="let field of formFields" class="container">   
+  <label for={{field.id}}>{{field.label}}</label>
+  <input type="text" name={{field.id}} ngModel *ngIf="field.type.name=='string'" >
+  <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'" >
+  <input type="text" name={{field.id}} ngModel *ngIf="field.type.name=='long'" >      
+</div>
+<input type="submit" class="btn btn-lg btn-primary btn-block" value="Register" />
+<!--   <button type="submit" class="btn btn-primary btn-block"> Register </button> -->
+
+
+</form>

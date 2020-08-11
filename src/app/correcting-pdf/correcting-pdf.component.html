@@ -1,0 +1,19 @@
+<form class="form-review" #correct="ngForm" (ngSubmit)="correctArticle(correct.value, correct)">
+    <div class="container">         
+      <div class="col form-group">
+        <label>Please upload correct article.</label>
+        <input class="form-control" type="file"(change)="onSelectPdf($event)" ngModel>
+      </div>
+        <div *ngFor="let field of formFields">
+            <div class="form-row">
+              <div class="col form-group">
+                <label for={{field.id}}>{{field.label}} </label>
+                &nbsp;
+                <input type="checkbox" name="{{field.id}}" ngModel>
+              </div>
+            </div>
+        </div>
+  </div>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="OK" />
+  
+  </form>
