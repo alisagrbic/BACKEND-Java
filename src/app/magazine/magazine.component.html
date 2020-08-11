@@ -1,0 +1,13 @@
+
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let magazine of magazines">
+    <div class="card">
+      <div class="card-block p-3">
+        <h4 class="card-title" name="Name">{{magazine.title}}</h4>
+        &nbsp;
+        <a (click)="onClick(magazine)" class="btn btn-primary rounded-0 mb-2">Add article</a>
+      </div>
+    </div>
+  </div>
+</div>
