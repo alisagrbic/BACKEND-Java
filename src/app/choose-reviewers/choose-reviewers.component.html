@@ -1,0 +1,12 @@
+<form #reviewerForm="ngForm" (ngSubmit)="onSubmit(reviewerForm.value, reviewerForm)">
+    <div class="container">   
+        <select name="reviewer" [(ngModel)]="reviewer">
+            <option *ngFor="let val of enumValues" [value]="val.name">
+                {{val.name}}
+            </option>
+          </select>
+  </div>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="Choose reviewer" />
+  <!--   <button type="submit" class="btn btn-primary btn-block"> Register </button> -->
+  
+  </form>

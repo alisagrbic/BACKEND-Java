@@ -1,0 +1,15 @@
+<form class="form-review" #reviewPDF="ngForm" (ngSubmit)="onSubmit(reviewPDF.value, reviewPDF)">
+    <div class="container">   
+        <div *ngFor="let field of formFields">
+            <div class="form-row">
+              <div class="col form-group">
+                <label for={{field.id}}>{{field.label}} </label>
+                &nbsp;
+                <input type="checkbox" name="{{field.id}}" ngModel>
+              </div>
+            </div>
+        </div>
+  </div>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="OK" />
+  
+  </form>

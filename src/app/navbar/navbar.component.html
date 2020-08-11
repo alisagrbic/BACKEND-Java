@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">HOME</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngIf="loggedAuthor()"><a [routerLink]="['/tasks']"><span class="glyphicon glyphicon-user"></span> Tasks</a></li>
+      <li *ngIf="loggedEditor()"><a [routerLink]="['/tasks']"><span class="glyphicon glyphicon-user"></span> Tasks</a></li>
+      <li *ngIf="loggedReviewer()"><a [routerLink]="['/tasks']"><span class="glyphicon glyphicon-user"></span> Tasks</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!loggedIn"><a [routerLink]="['/registration']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li *ngIf="!loggedIn"><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li class="nav-item" *ngIf="loggedIn" >
+        <a class="nav-link" (click)="logOut()" routerLinkActive="navbar-brand" id="right">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
